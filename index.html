@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <!---   CSS        --->
+    <link rel="stylesheet" href="src/css/style.css" />
+    <!--- FONTE      --->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Barbecue Calculator</title>
+  </head>
+  <body>
+   <header class="header">
+  <div class="container">
+    <img
+      src="img/logo by Foresit.png"
+      alt="logo calculadora de churrasco"
+      class="logo"
+    />
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+        <h1 class="title-principal">Barbecue Calculator</h1>
+        <form name="camposFormulario">
+          <p class="descricao-convidados">Enter how many people will be at the barbecue.</p>
+          <input type="number" name="convidados" id="convidados" />
+
+          <div class="blocos-editaveis">
+            <section class="meats">
+              <h2>Meats</h2>
+              <div class="campo-form">
+                <label for="bovine">Bovine</label>
+                <input
+                  type="text"
+                  name="bovine"
+                  id="bovine"
+                  placeholder="valor do kg"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="chicken">Chicken</label>
+                <input
+                  type="text"
+                  name="chicken"
+                  id="chicken"
+                  placeholder="valor do kg"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="pork">Pork</label>
+                <input
+                  type="text"
+                  name="pork"
+                  id="pork"
+                  placeholder="valor do kg"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="steakCuts">Steak cuts (portion variations)</label>
+                <input
+                  type="text"
+                  name="steakCuts"
+                  id="steakCuts"
+                  placeholder="valor do kg"
+                />
+              </div>
+            </section>
+            <section class="drinks">
+              <h2>Drinks</h2>
+              <div class="campo-form">
+                <label for="soda">Soft drink (Per Liter)</label>
+                <input
+                  type="text"
+                  name="soda"
+                  id="soda"
+                  placeholder="valor por litro"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="beer">Beer (can or 355ml bottle)</label>
+                <input
+                  type="text"
+                  name="beer"
+                  id="beer"
+                  placeholder="valor por unidade"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="spirits">Distilled spirits</label>
+                <input
+                  type="text"
+                  name="spirits"
+                  id="spirits"
+                  placeholder="valor por litro"
+                />
+              </div>
+              <div class="campo-form">
+                <label for="quantidadePessoasBebemCerveja"
+                  >Number of people who drink beer</label
+                >
+                <input
+                  type="number"
+                  name="quantidadePessoasBebemCerveja"
+                  id="quantidadePessoasBebemCerveja"
+                  placeholder="Número de Pessoas"
+                />
+              </div>
+            </section>
+          </div>
+
+          <button type="submit" class="btn-calcular" id="calcular">
+            Do Calculation
+          </button>
+        </form>
+
+        <section class="resultado-section" id="resultado">
+          <h2 class="titulo-secao">Result</h2>
+
+          <div class="campos-resposta">
+            <!---tabela do resultado de carnes--->
+            <table class="tabela">
+              <tr>
+                <th></th>
+                <th>Amount</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <th>Beef needed for barbecue</th>
+                <td class="valor-resposta" id="qtd-bovine"></td>
+                <td class="valor-resposta" id="valor-bovine"></td>
+              </tr>
+              <tr>
+                <th>Chicken needed for barbecue</th>
+                <td class="valor-resposta" id="qtd-chicken"></td>
+                <td class="valor-resposta" id="valor-chicken"></td>
+              </tr>
+              <tr>
+                <th>Pork needed for barbecue</th>
+                <td class="valor-resposta" id="qtd-pork"></td>
+                <td class="valor-resposta" id="valor-pork"></td>
+              </tr>
+              <tr>
+                <th>Steak cuts needed for barbecue</th>
+                <td class="valor-resposta" id="qtd-steakCuts"></td>
+                <td class="valor-resposta" id="valor-steakCuts"></td>
+              </tr>
+              <tr>
+                <th class="total">Total</th>
+                <td class="valor-resposta" id="qtd-total-meats"></td>
+                <td class="valor-resposta" id="valor-total-meats"></td>
+              </tr>
+            </table>
+            <!---tabela do resultado das bebidas--->
+            <table class="tabela">
+              <tr>
+                <th></th>
+                <th>Amount</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <th>Amount of Soft Drinks</th>
+                <td class="valor-resposta" id="qtd-soda"></td>
+                <td class="valor-resposta" id="valor-soda"></td>
+              </tr>
+              <tr>
+                <th>Amount of Beer</th>
+                <td class="valor-resposta" id="qtd-beer"></td>
+                <td class="valor-resposta" id="valor-beer"></td>
+              </tr>
+              <tr>
+                <th>Amount of Spirits</th>
+                <td class="valor-resposta" id="qtd-spirits"></td>
+                <td class="valor-resposta" id="valor-spirits"></td>
+              </tr>
+              <tr>
+                <th class="total">Total</th>
+                <td></td>
+                <td class="valor-resposta" id="valor-total-drinks"></td>
+              </tr>
+            </table>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        2026 Website developed by
+        <a href="http://github.com/eucayquekk" target="_blank" rel="noopener noreferrer">DevForesit</a>
+      </p>
+    </footer>
+
+    <script type="module" src="src/js/script.js"></script>
+  </body>
+</html>
